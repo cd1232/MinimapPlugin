@@ -58,7 +58,8 @@ void AMinimapCapture::CaptureMinimap()
 	FString AssetName = FString("T_");
 	AssetName.Append(GetWorld()->GetMapName());
 	AssetName.Append(TEXT("_Minimap"));
-	FString PackageName = *MinimapPackagePath.Append(TEXT("/")).Append(AssetName);
+	FString MinimapPath = MinimapPackagePath;	
+	FString PackageName = *MinimapPath.Append(TEXT("/")).Append(AssetName);
 	
 	UPackage* Package = CreatePackage(*PackageName);
 	
